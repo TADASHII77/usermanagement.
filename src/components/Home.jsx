@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+
 import './Home.css';
 
 const Home = () => {
@@ -113,10 +113,10 @@ const Home = () => {
                 <td>
                   <div className="btn-group" role="group" aria-label="User Actions">
                     <button className="btn btn-success" onClick={() => handleEditClick(user)}>
-                      <i className="bi bi-pencil"></i> {/* Bootstrap icon for edit */}
+                      <i className="bi bi-pencil"></i> 
                     </button>
                     <button className="btn btn-danger" onClick={() => handleDeleteUser(user.id)}>
-                      <i className="bi bi-trash"></i> {/* Bootstrap icon for delete */}
+                      <i className="bi bi-trash"></i> 
                     </button>
                   </div>
                 </td>

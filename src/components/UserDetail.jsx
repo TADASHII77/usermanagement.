@@ -8,6 +8,7 @@ const UserDetail = () => {
   const [user, setUser] = useState(null); // State to store user data
   const [loading, setLoading] = useState(true); // State for loading
   const [error, setError] = useState(null); // State for error handling
+  const [viewMode, setViewMode] = useState(true); // State to toggle between detail view and edit mode
   
   // Fetch user data when the component is mounted
   useEffect(() => {
@@ -42,14 +43,29 @@ const UserDetail = () => {
     setUser({ ...user, [e.target.name]: e.target.value });
   };
 
+  // Toggle between view and edit modes
+  const toggleViewMode = () => {
+    setViewMode(!viewMode); // Switch between detail view and edit form
+  };
+
   return (
     <div className="container">
-      <h2 className="my-4">Edit User</h2>
+      <h2 className="my-4">{viewMode ? "User Details" : "Edit User"}</h2>
       {loading && <p>Loading user...</p>} {/* Display while loading */}
       {error && <p>{error}</p>} {/* Display error if any */}
 
-      {/* Show form if user data is available */}
-      {user && (
+      {/* Show user details if in view mode */}
+      {user && viewMode && (
+        <div>
+          <p><strong>Name:</strong> {user.name}</p>
+          <p><strong>Email:</strong> {user.email}</p>
+          <p><strong>Phone:</strong> {user.phone}</p>
+          <button className="btn btn-secondary" onClick={toggleViewMode}>Edit</button>
+        </div>
+      )}
+
+      {/* Show form if in edit mode */}
+      {user && !viewMode && (
         <form onSubmit={handleUpdateUser}>
           <div className="form-group">
             <input
@@ -82,6 +98,7 @@ const UserDetail = () => {
             />
           </div>
           <button type="submit" className="btn btn-primary">Update User</button>
+          <button type="button" className="btn btn-secondary" onClick={toggleViewMode}>Cancel</button>
         </form>
       )}
     </div>

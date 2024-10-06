@@ -119,78 +119,17 @@ body {
   @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
-  }
-  
-  @media (max-width: 768px) {
-    .container {
-        padding: 15px;
-    }
-
-    .table-title {
-        padding: 12px;
-        margin: -10px -10px 10px;
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .table-title h2 {
-        font-size: 20px;
-        margin-bottom: 10px;
-    }
-
-    .table-title .btn {
-        font-size: 12px;
-        padding: 8px;
-        margin-left: 0;
-        margin-bottom: 10px;
-    }
-
-    .popup-content {
-        width: 100%;
-    }
-
-    .loading-spinner {
-        width: 50px;
-        height: 50px;
-        border-width: 12px;
-    }
-
-    .table thead th {
-        font-size: 12px;
-        padding: 10px;
-    }
-
-    .table tbody td {
-        padding: 10px;
-    }
-
-    .btn-group .btn {
-        font-size: 12px;
-        padding: 6px;
-    }
-
-    .add-user-btn {
-        display: block;
-        margin: 10px 0;
-        padding: 10px 15px;
-        font-size: 12px;
-        background-color: #4CAF50; /* Add your preferred color */
-        color: #fff;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        text-align: center;
-    }
 }
 
-@media (max-width: 480px) {
+/* Responsive Design */
+@media (max-width: 768px) {
     .container {
         padding: 10px;
     }
 
     .table-title {
-        padding: 10px;
-        margin: -5px -5px 5px;
+        padding: 8px;
+        margin: -8px -8px 10px;
     }
 
     .table-title h2 {
@@ -200,45 +139,77 @@ body {
     .table-title .btn {
         font-size: 11px;
         padding: 6px;
-        margin-left: 0;
-        margin-bottom: 5px;
     }
 
     .popup-content {
-        padding: 15px;
-        width: 100%;
+        width: 90%;
     }
 
     .loading-spinner {
         width: 40px;
         height: 40px;
-        border-width: 8px;
+        border-width: 10px;
     }
 
-    .table thead th {
-        font-size: 10px;
-        padding: 8px;
-    }
-
+    .table thead th,
     .table tbody td {
+        font-size: 11px; 
         padding: 8px;
     }
 
     .btn-group .btn {
         font-size: 11px;
+        padding: 5px;
+    }
+
+    .add-user-btn {
+        font-size: 11px; 
+        padding: 8px 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 8px;
+    }
+
+    .table-title {
+        padding: 6px;
+        margin: -5px -5px 5px;
+    }
+
+    .table-title h2 {
+        font-size: 16px;
+    }
+
+    .table-title .btn {
+        font-size: 10px;
+        padding: 5px;
+    }
+
+    .popup-content {
+        width: 100%;
+    }
+
+    .loading-spinner {
+        width: 30px;
+        height: 30px;
+        border-width: 8px;
+    }
+
+    .table thead th,
+    .table tbody td {
+        font-size: 10px; 
+        padding: 6px;
+    }
+
+    .btn-group .btn {
+        font-size: 10px;
         padding: 4px;
     }
 
     .add-user-btn {
-        display: block;
-        margin: 5px 0;
-        padding: 8px 12px;
         font-size: 10px;
-        background-color: #4CAF50; /* Add your preferred color */
-        color: #fff;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        text-align: center;
+        padding: 6px 10px;
     }
 }
